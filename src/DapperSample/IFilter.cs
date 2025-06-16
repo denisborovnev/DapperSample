@@ -2,5 +2,5 @@
 
 public interface IFilter
 {
-    (string whereClause, object parameters) Apply();
+    (string whereClause, object parameters) Build();
 }
