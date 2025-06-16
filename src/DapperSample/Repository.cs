@@ -27,7 +27,7 @@ public class Repository
         var whereClauses = new List<string>();
         foreach (var filter in filters)
         {
-            var (whereClause, filterParameters) = filter.Apply();
+            var (whereClause, filterParameters) = filter.Build();
             parameters.AddDynamicParams(filterParameters);
             whereClauses.Add(whereClause);
         }
