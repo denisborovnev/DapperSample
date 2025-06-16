@@ -2,7 +2,10 @@
 using DapperSample.Entities;
 using Microsoft.Data.SqlClient;
 
+[module:DapperAot]
+
 namespace DapperSample;
+
 
 public class Repository
 {
@@ -39,5 +42,6 @@ WHERE {whereStr}
 
         await using var conn = new SqlConnection(ConnectionString);
         return await conn.QueryAsync<T>(query, parameters);
+        //return await conn.QueryAsync<T>("SELECT Id, Name, Email FROM Users");
     }
 }
